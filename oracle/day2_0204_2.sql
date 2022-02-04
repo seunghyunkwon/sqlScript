@@ -60,8 +60,25 @@
 	--평균값을 구하고 조건식에 이용하기 (서브쿼리)
 	SELECT JOB_ID, JOB_TITLE FROM JOBS j 
 	WHERE MIN_SALARY < (SELECT avg(MIN_SALARY) FROM JOBS j2);
+
 	
+	--ex1) 가장 높은 임금을 받는 사람의 직급과 이름 사는 곳 연락처를 알아내어라.!
+	SELECT JOB_TITLE FROM JOBS j 
+	WHERE MAX_SALARY =(SELECT MAX(MAX_SALARY) FROM JOBS j2);
+	--직급 : President
 	
+	SELECT FIRST_NAME, LAST_NAME, PHONE_NUMBER FROM EMPLOYEES e
+	WHERE SALARY = (SELECT MAX(SALARY) FROM EMPLOYEES e2);
+	--이름 : Steven King 연락처 : 515.123.4567
+	
+	--주소 알아내기 실패 (목록에서 조건을 찾아낼 수 없음)
+
+
+	--ex2) 로마에 사는 누군가에 대해 알아보자
+	SELECT * FROM LOCATIONS l WHERE CITY='Roma';
+	
+	--ex3) 각 국가에 분포된 Region_ID에 대해 파악해보자
+	SELECT COUNTRY_NAME,REGION_ID  FROM COUNTRIES c ;
 	
 	
 	
