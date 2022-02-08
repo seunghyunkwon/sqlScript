@@ -106,7 +106,7 @@ VALUES(TBL_BUY_SEQ.nextval,'mina012', 'd_143', 1, sysdate);
 
 
 --1. custom# 테이블에서 age 가 30세 이상 모든 내용 조회
-SELECT * FROM "TBL_CUSTOM#" tc WHERE AGE>30;
+SELECT * FROM "TBL_CUSTOM#" tc WHERE AGE>=30;
 
 --2. custom# 테이블에서 custom_id 'twice' 의 email 조회
 SELECT email FROM "TBL_CUSTOM#" tc WHERE CUSTOM_ID = 'twice';
